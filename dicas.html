@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lili Crochê Decor - Dicas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Imagens/lililogoic1.ico" type="image/x-icon">
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo-title">
+            <img src="Imagensoriginais/logolilicroche.png" alt="Logo Lili Crochê Decor" class="logo">
+        </div>
+        <h1>Lili Crochê Decor</h1>
+        <button id="menu-toggle">☰</button>
+        <nav id="nav-menu">
+            <a href="lar.html">Lar</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="dicas.html">Dicas</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="faleconosco.html">Fale Conosco</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <section class="dicas">
+            <h2>Dicas de Crochê</h2>
+            <div class="carrossel-dicas">
+                <!-- Dica 1 -->
+                <div class="dica">
+                    <img src="Imagensoriginais/decoracaosouplatverdmilitardourado800x900.webp" alt="Decoração com crochê">
+                    <div class="dica-conteudo">
+                        <h3>Use peças de crochê para decorar sua casa</h3>
+                        <p>Peças como jogos americanos, capas de almofadas e cortinas de crochê podem trazer um charme especial para qualquer ambiente.</p>
+                    </div>
+                </div>
+
+                <!-- Dica 2 -->
+                <div class="dica">
+                    <img src="Imagensoriginais/decoracaosouplatvermelho800x800.webp" alt="Combinação de cores e texturas">
+                    <div class="dica-conteudo">
+                        <h3>Combine cores e texturas</h3>
+                        <p>Escolha fios com cores que combinem com a paleta do seu ambiente e misture texturas para criar um visual mais interessante.</p>
+                    </div>
+                </div>
+
+                <!-- Dica 3 -->
+                <div class="dica">
+                    <img src="Imagensoriginais/dicasdedecoracaoamarelo800x800.webp" alt="Peças temáticas de crochê">
+                    <div class="dica-conteudo">
+                        <h3>Peças temáticas para ocasiões especiais</h3>
+                        <p>Para festas e datas comemorativas, cobre mesas e decore paredes com peças temáticas de crochê, como guirlandas e enfeites.</p>
+                    </div>
+                </div>
+
+                <!-- Adicione mais dicas conforme necessário -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2023 Lili Crochê Decor. Todos os direitos reservados.</p>
+        <p>Siga-nos nas redes sociais: 
+            <a href="https://www.instagram.com/lilicrochedecor/?hl=pt-br">Instagram</a> | 
+            <a href="https://br.pinterest.com/lili_croche_decor/_created/">Pinterest</a>
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.carrossel-dicas').slick({
+                dots: true,
+                arrows: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            arrows: false
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>
