@@ -1,17 +1,18 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Seletores
+// Aguarda o carregamento completo do DOM
+document.addEventListener('DOMContentLoaded', () => {
+    // Seletores do menu
     const dropdownToggle = document.querySelector('.dropdown-toggle');
     const dropdownMenu = document.querySelector('.dropdown-menu');
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
 
-    // Abrir/Fechar o dropdown menu
+    // Toggle do dropdown (se existir na página)
     if (dropdownToggle && dropdownMenu) {
         dropdownToggle.addEventListener('click', () => {
             dropdownMenu.classList.toggle('show');
         });
 
-        // Fechar o dropdown ao clicar fora
+        // Fecha o dropdown ao clicar fora
         document.addEventListener('click', (e) => {
             if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
                 dropdownMenu.classList.remove('show');
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 
-    // Abrir/Fechar o menu de navegação (hamburguer)
+    // Toggle do menu hamburguer
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
@@ -27,35 +28,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 });
 
-// script.js - Adicione esta inicialização
-$(document).ready(function(){
-    $('.galeria-carrossel').slick({
-        dots: true,
-        arrows: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 2,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
-        ]
-    });
-});
-
-// Inicialização de todos os carrosséis
-$(document).ready(function(){
-    // Carrossel Principal
+// Inicialização dos carrosséis com jQuery
+$(document).ready(function () {
+    // Carrossel Principal (Página Inicial)
     $('.carrossel-principal').slick({
         dots: true,
         autoplay: true,
-        autoplaySpeed: 3000
+        autoplaySpeed: 3000,
+        arrows: true
     });
 
-    // Carrossel de Dicas
+    // Carrossel de Dicas (Página de Dicas)
     $('.carrossel-dicas').slick({
         dots: true,
         arrows: false,
@@ -70,19 +53,12 @@ $(document).ready(function(){
         ]
     });
 
-    // Carrossel Sobre
-    $('.carrossel-sobre').slick({
-        dots: true,
-        fade: true
-    });
-});
-
-$(document).ready(function(){
+    // Carrossel da Galeria (Produtos ou Imagens)
     $('.galeria-carrossel').slick({
         dots: true,
         infinite: true,
         speed: 300,
-        slidesToShow: 3, // 3 produtos por vez
+        slidesToShow: 3,
         slidesToScroll: 1,
         responsive: [
             {
@@ -99,37 +75,36 @@ $(document).ready(function(){
             }
         ]
     });
-});
 
-$('.carrossel').slick({
-    responsive: [
-        {
-            breakpoint: 1200,
-            settings: {
-                slidesToShow: 2,
-                centerMode: true
-            }
-        },
-        {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 1,
-                adaptiveHeight: true
-            }
-        }
-    ]
-});
-
-$(document).ready(function(){
+    // Carrossel Sobre (Página Sobre)
     $('.carrossel-sobre').slick({
         dots: true,
         arrows: true,
+        fade: true,
         infinite: true,
         speed: 300,
         slidesToShow: 1,
-        slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 5000
+    });
+
+    // Carrossel Genérico (Outros carrosséis)
+    $('.carrossel').slick({
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2,
+                    centerMode: true
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    adaptiveHeight: true
+                }
+            }
+        ]
     });
 });
-

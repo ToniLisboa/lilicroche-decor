@@ -13,7 +13,7 @@ body {
     background-color: #F5E9E8; /* Fundo neutro para o corpo */
     color: #402E2D; /* Cor do texto principal */
 }
-/* Cabeçalho */
+/* Cabeçalho fixo */
 header {
     background-color: #BF8887; /* Cor principal */
     color: #ffffff; /* Cor do texto */
@@ -23,7 +23,19 @@ header {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.3);
+    
+    position: fixed; /* Mantém o cabeçalho fixo */
+    top: 0; /* Fixa no topo */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
 }
+
+/* Ajusta o conteúdo para não ficar atrás do cabeçalho */
+body {
+    padding-top: 100px; /* Adiciona um espaçamento igual à altura do cabeçalho */
+}
+
 
 h1 {
     font-family: 'Birds of Paradise', sans-serif;
@@ -38,6 +50,8 @@ h1 {
     font-size: 1.5rem;
     cursor: pointer;
 }
+
+
 
 /* Navegação */
 #nav-menu {
