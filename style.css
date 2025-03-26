@@ -1,12 +1,23 @@
 @font-face {
     font-family: 'Birds of Paradise';
     src: url('fontes/Birds of Paradise © PERSONAL USE ONLY.ttf') format('truetype');
+    
+    
 }
+@font-face {
+    font-family: 'marcellus';
+    src: url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap') format('truetype');
+    
+    
+}
+
+
+
 
 /* Estilos Gerais */
 
 body {
-    font-family:'Birds of Paradise', sans-serif;
+    font-family:'marcellus';
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -15,9 +26,9 @@ body {
 }
 /* Cabeçalho fixo */
 header {
-    background-color: #BF8887; /* Cor principal */
+    background-color: rgba(192, 154, 154, 1); /* Cor principal */
     color: #ffffff; /* Cor do texto */
-    font-family: 'Birds of Paradise', sans-serif;
+    font-family: 'marcellus', sans-serif;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -38,7 +49,7 @@ body {
 
 
 h1 {
-    font-family: 'Birds of Paradise', sans-serif;
+    font-family: 'marcellus';
     font-size: 3.5rem;
     margin: 0;
 }
@@ -71,7 +82,7 @@ h1 {
 }
 
 #nav-menu a:hover {
-    background-color: #FFB6B4; /* Cor de destaque */
+    background-color: rgba(192, 154, 154, 1); /* Cor de destaque */
     color: #402E2D; /* Cor do texto */
 }
 
@@ -99,7 +110,7 @@ img {
 
 /* Rodapé */
 footer {
-    background-color: #BF8887; /* Cor principal */
+    background-color:  rgba(192, 154, 154, 1); /* Cor principal */
     color: #402E2D; /* Cor do texto */
     text-align: center;
     padding: 10px;
@@ -128,7 +139,7 @@ footer a:hover {
     #nav-menu {
         display: none;
         flex-direction: column;
-        background-color: #BF8887;
+        background-color: rgba(192, 154, 154, 1);
         position: absolute;
         top: 60px;
         right: 20px;
@@ -155,7 +166,7 @@ footer a:hover {
 .form-group input, .form-group textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #BF8887; /* Cor principal */
+    border: 1px solid rgba(192, 154, 154, 1); /* Cor principal */
     border-radius: 5px;
     font-size: 1rem;
     color: #402E2D; /* Cor do texto */
