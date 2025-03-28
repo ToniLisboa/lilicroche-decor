@@ -1,9 +1,5 @@
-@font-face {
-    font-family: 'Birds of Paradise';
-    src: url('fontes/Birds of Paradise © PERSONAL USE ONLY.ttf') format('truetype');
-    
-    
-}
+
+
 @font-face {
     font-family: 'marcellus';
     src: url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap') format('truetype');
@@ -15,7 +11,7 @@
 body {
     font-family:'marcellus';
     margin: 0;
-    padding: 0;
+    padding-top: 100px;
     line-height: 1.6;
     background-color: #F5E9E8; /* Fundo neutro para o corpo */
     color: #402E2D; /* Cor do texto principal */
@@ -25,11 +21,12 @@ header {
     background-color: rgba(192, 154, 154, 1); /* Cor principal */
     color: #ffffff; /* Cor do texto */
     font-family: 'marcellus', sans-serif;
-    padding: 10px 20px;
+    padding: 10px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.3);
+    
     
     position: fixed; /* Mantém o cabeçalho fixo */
     top: 0; /* Fixa no topo */
@@ -38,10 +35,8 @@ header {
     z-index: 1000; /* Garante que fique acima de outros elementos */
 }
 
-/* Ajusta o conteúdo para não ficar atrás do cabeçalho */
-body {
-    padding-top: 100px; /* Adiciona um espaçamento igual à altura do cabeçalho */
-}
+
+
 
 
 h1 {
@@ -56,6 +51,7 @@ h1 {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
+    color: aliceblue;
 }
 
 
