@@ -1,59 +1,88 @@
-// Aguarda o carregamento completo do DOM
+// ========================================
+// CONFIGURAÇÃO DE NAVEGAÇÃO
+// ========================================
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Seletores do menu
+    // Elementos do DOM
     const dropdownToggle = document.querySelector('.dropdown-toggle');
     const dropdownMenu = document.querySelector('.dropdown-menu');
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
 
-    // Toggle do dropdown (se existir na página)
-    if (dropdownToggle && dropdownMenu) {
-        dropdownToggle.addEventListener('click', () => {
-            dropdownMenu.classList.toggle('show');
-        });
-
-        // Fecha o dropdown ao clicar fora
-        document.addEventListener('click', (e) => {
-            if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
-                dropdownMenu.classList.remove('show');
-            }
-        });
-    }
-
-    // Toggle do menu hamburguer
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-    }
+    // Gerenciamento do Dropdown
+    initDropdownMenu(dropdownToggle, dropdownMenu);
+    
+    // Gerenciamento do Menu Mobile
+    initMobileMenu(menuToggle, navMenu);
 });
 
-// Inicialização dos carrosséis com jQuery
-$(document).ready(function () {
-    // Carrossel Principal (Página Inicial)
+// Funções de inicialização da navegação
+function initDropdownMenu(toggle, menu) {
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener('click', () => {
+        menu.classList.toggle('show');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+            menu.classList.remove('show');
+        }
+    });
+}
+
+function initMobileMenu(toggle, menu) {
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+}
+
+// ========================================
+// CONFIGURAÇÃO DOS CARROSSÉIS
+// ========================================
+
+$(document).ready(() => {
+    // Carrossel da Página Inicial
+    initMainCarousel();
+    
+    // Carrossel da Página de Dicas
+    initTipsCarousel();
+    
+    // Carrossel da Galeria
+    initGalleryCarousel();
+    
+    // Carrossel da Página Sobre
+    initAboutCarousel();
+    
+    // Carrossel Genérico
+    initGenericCarousel();
+});
+
+// Funções de inicialização dos carrosséis
+function initMainCarousel() {
     $('.carrossel-principal').slick({
         dots: true,
         autoplay: true,
         autoplaySpeed: 3000,
         arrows: true
     });
+}
 
-    // Carrossel de Dicas (Página de Dicas)
+function initTipsCarousel() {
     $('.carrossel-dicas').slick({
         dots: true,
         arrows: false,
         slidesToShow: 2,
-        responsive: [
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
-        ]
+        responsive: [{
+            breakpoint: 600,
+            settings: { slidesToShow: 1 }
+        }]
     });
+}
 
-    // Carrossel da Galeria (Produtos ou Imagens)
+function initGalleryCarousel() {
     $('.galeria-carrossel').slick({
         dots: true,
         infinite: true,
@@ -63,20 +92,17 @@ $(document).ready(function () {
         responsive: [
             {
                 breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2
-                }
+                settings: { slidesToShow: 2 }
             },
             {
                 breakpoint: 600,
-                settings: {
-                    slidesToShow: 1
-                }
+                settings: { slidesToShow: 1 }
             }
         ]
     });
+}
 
-    // Carrossel Sobre (Página Sobre)
+function initAboutCarousel() {
     $('.carrossel-sobre').slick({
         dots: true,
         arrows: true,
@@ -87,8 +113,9 @@ $(document).ready(function () {
         autoplay: true,
         autoplaySpeed: 5000
     });
+}
 
-    // Carrossel Genérico (Outros carrosséis)
+function initGenericCarousel() {
     $('.carrossel').slick({
         responsive: [
             {
@@ -107,4 +134,4 @@ $(document).ready(function () {
             }
         ]
     });
-});
+}
