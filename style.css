@@ -96,6 +96,19 @@ section {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
+section a:hover {
+    text-decoration: underline; /* Sublinha o texto ao passar o mouse */
+    background-color: rgba(192, 154, 154, 1);
+    color: white; /* Fundo neutro */
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border: 2px solid #BF8887; /* Adiciona borda sólida */
+    transition: all 0.3s ease; /* Suaviza a transição */
+}
+
 img {
     max-width: 100%;
     height: auto;
