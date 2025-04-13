@@ -6,6 +6,7 @@
     
     
 }
+
 /* Estilos Gerais */
 
 body {
@@ -584,3 +585,49 @@ button[type="submit"]:hover {
     font-size: 1.1rem; /* Texto um pouco maior para melhor leitura */
     line-height: 1.6;  /* Espaçamento para melhorar a legibilidade */
 }
+/* === RESPONSIVIDADE === */
+
+/* CELULAR */
+@media (max-width: 767px) {
+    body {
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .produto {
+      flex: 1 1 100%;
+    }
+  
+    .carrossel img {
+      aspect-ratio: 1/1;
+    }
+  }
+  
+  /* DESKTOP */
+  @media (min-width: 768px) and (max-width: 1199px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+  
+    .produto {
+      flex: 1 1 45%;
+    }
+  }
+  
+  /* TELAS GRANDES (TVs, monitores grandes) */
+  @media (min-width: 1200px) {
+    h1 {
+      font-size: 3rem;
+    }
+  
+    .produto {
+      flex: 1 1 30%;
+    }
+  
+    .carrossel img {
+      aspect-ratio: 16/9;
+    }
+  }
